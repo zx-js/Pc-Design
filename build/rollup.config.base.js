@@ -4,7 +4,7 @@
  * @Author: bhabgs
  * @Date: 2019-10-29 10:56:25
  * @LastEditors: bhabgs
- * @LastEditTime: 2019-10-30 15:11:35
+ * @LastEditTime: 2019-10-30 15:18:32
  */
 import resolve from 'rollup-plugin-node-resolve' // 告诉 Rollup 如何查找外部模块
 import commonjs from 'rollup-plugin-commonjs' // 将CommonJS模块转换为 ES2015 供 Rollup 处理
@@ -14,7 +14,7 @@ import css from 'rollup-plugin-css-only' // 提取css，压缩能力不行
 import CleanCSS from 'clean-css' // 压缩css
 import { writeFileSync } from 'fs' // 写文件
 import typescript from 'rollup-plugin-typescript';
-import tsx from 'rollup-plugin-tsx'; // tsx编译
+// import tsx from 'rollup-plugin-tsx'; // tsx编译
 import less from 'rollup-plugin-less'; // less 编译
 import replace from 'rollup-plugin-replace'
 export default {
