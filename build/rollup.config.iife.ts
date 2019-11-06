@@ -4,9 +4,9 @@
  * @Author: bhabgs
  * @Date: 2019-10-29 10:58:34
  * @LastEditors: bhabgs
- * @LastEditTime: 2019-10-29 13:14:25
+ * @LastEditTime: 2019-11-06 15:32:11
  */
-import base from './rollup.config.base'
+import base from './rollup.config.base.ts'
 import uglify from 'rollup-plugin-uglify-es' //js压缩
 
 const config = Object.assign({}, base, {

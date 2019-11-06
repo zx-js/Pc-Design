@@ -4,9 +4,9 @@
  * @Author: bhabgs
  * @Date: 2019-10-29 10:57:24
  * @LastEditors: bhabgs
- * @LastEditTime: 2019-10-29 14:13:25
+ * @LastEditTime: 2019-11-06 15:31:46
  */
-import base from './rollup.config.base'
+import base from './rollup.config.base.ts'
 
 const config = Object.assign({}, base, {
   output: {
