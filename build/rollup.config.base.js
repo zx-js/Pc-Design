@@ -15,7 +15,6 @@ import css from 'rollup-plugin-css-only'; // 提取css，压缩能力不行
 import CleanCSS from 'clean-css'; // 压缩css
 import { writeFileSync } from 'fs'; // 写文件
 import typescript from 'rollup-plugin-typescript';
-// import tsx from 'rollup-plugin-tsx'; // tsx编译
 import less from 'rollup-plugin-less'; // less 编译
 import replace from 'rollup-plugin-replace';
 export default {
@@ -29,7 +28,6 @@ export default {
         requireContext({
             include: ['**/*.js', '**/*.ts'],
         }),
-        // tsx(),
         less(),
         commonjs(),
         vue({ css: false }),
@@ -40,6 +38,7 @@ export default {
         babel({
             exclude: 'node_modules/**', // 防止打包node_modules下的文件
             runtimeHelpers: true, // 使plugin-transform-runtime生效
+            plugins: ['transform-vue-jsx'],
         }),
         css({
             output(style) {
