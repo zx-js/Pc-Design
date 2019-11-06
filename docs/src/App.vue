@@ -11,7 +11,6 @@
         <mt-button></mt-button>
         <mt-input></mt-input>
         <test></test>
-        <SiderBox />
     </div>
 </template>
 

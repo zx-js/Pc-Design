@@ -1,10 +1,8 @@
-import { Vue, Component} from 'vue-property-decorator'
+import { Vue, Component } from 'vue-property-decorator';
 @Component
-export default class SiderBox extends Vue {
-    constructor() {
-        super()
-    }
+export default class MtSider extends Vue {
+    public msg: string = 'This is sider box';
     render() {
-        return <div>哈哈哈</div>
+        return <div>{this.msg}</div>;
     }
 }
