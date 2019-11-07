@@ -20,7 +20,7 @@ const themeConfig = {
         { text: '主题', link: '/vue/theme/' },
     ],
     sidebar: {
-        '/vue/': ['', 'button/', 'tree/', 'theme/'],
+        '/vue/': ['', 'test/', 'timeline/', 'theme/'],
     },
 };
 exports.themeConfig = themeConfig;
