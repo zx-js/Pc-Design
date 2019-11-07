@@ -4,7 +4,7 @@
  * @Author: bhabgs
  * @Date: 2019-11-07 09:20:06
  * @LastEditors: bhabgs
- * @LastEditTime: 2019-11-07 09:45:03
+ * @LastEditTime: 2019-11-07 13:35:45
  */
 import mtUtil from '../../dist/mt-util.min'
 export default ({
@@ -13,6 +13,6 @@ export default ({
     router, // 当前应用的路由实例
     siteData // 站点元数据
   }) => {
-      Vue.use(mtUtil)
+      Vue.use(mtUtil);
     // ...做一些其他的应用级别的优化
   }
