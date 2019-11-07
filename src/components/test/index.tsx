@@ -7,7 +7,7 @@ export default class MtTest extends Vue {
         return (
             <div>
                 <h1>{this.msg}</h1>
-                {/* <p mt-test></p> */}
+                <p v-mt-test></p>
             </div>
         );
     }
