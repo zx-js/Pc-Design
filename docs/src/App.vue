@@ -8,17 +8,24 @@
  -->
 <template>
     <div id="app">
+        <router-view></router-view>
+        <div>^^^^^^^^^markdown^^^^^^^^^</div>
         <mt-button />
         <mt-input />
         <mt-sider />
         <mt-test />
+        <div>^^^^^^^^^markdown^^^^^^^^^</div>
+        <Markdown />
     </div>
 </template>
 
 <script>
-// import Markdown from '@/md/guide.md';
+import Markdown from '@/md/guide.md';
 export default {
     name: 'app',
+    components: {
+        Markdown,
+    },
     data() {
         return {
             msg: 'Welcome to Your Vue.js App',
