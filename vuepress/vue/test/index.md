@@ -1,3 +1,3 @@
-# test
+# 测试组件 `test`
 
 <mt-test />
