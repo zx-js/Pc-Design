@@ -4,10 +4,10 @@
  * @Author: bhabgs
  * @Date: 2019-10-29 10:58:34
  * @LastEditors: bhabgs
- * @LastEditTime: 2019-10-29 13:14:25
+ * @LastEditTime: 2019-11-07 09:39:01
  */
 import base from './rollup.config.base'
-import uglify from 'rollup-plugin-uglify-es' //js压缩
+const uglify = require('rollup-plugin-uglify-es') //js压缩
 
 const config = Object.assign({}, base, {
   output: {
@@ -19,6 +19,6 @@ const config = Object.assign({}, base, {
   },
 })
 
-config.plugins.push(uglify())
+// config.plugins.push(uglify())
 
 export default config
