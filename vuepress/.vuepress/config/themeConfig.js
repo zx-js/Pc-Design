@@ -4,7 +4,7 @@
  * @Author: bhabgs
  * @Date: 2019-11-07 09:48:14
  * @LastEditors: bhabgs
- * @LastEditTime: 2019-11-07 13:55:01
+ * @LastEditTime: 2019-11-08 09:43:09
  */
 const themeConfig = {
     nav: [
@@ -20,7 +20,17 @@ const themeConfig = {
         { text: '主题', link: '/vue/theme/' },
     ],
     sidebar: {
-        '/vue/': [['', 'vue 组件介绍'], ['install/', '安装'], ['quicklearning/', '快速上手'], ['upData/', '更新日志'], ['theme/', '主题定制化'], ['test/', '测试组件'], ['timeline/', '时间轴']],
+        '/vue/': [
+            ['', 'vue 组件介绍'],
+            ['upData/', '更新日志'],
+            ['install/', '安装'],
+            ['quicklearning/', '快速上手'],
+            ['theme/', '主题定制化'],
+            ['Tag/', 'tag 标签'],
+            ['loading/', 'loading加载'],
+            ['timeline/', '时间轴'],
+            ['test/', '测试组件']
+        ],
     },
     sidebarDepth: 2,
 };
