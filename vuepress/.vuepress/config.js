@@ -4,9 +4,9 @@
  * @Author: bhabgs
  * @Date: 2019-11-06 16:39:45
  * @LastEditors: bhabgs
- * @LastEditTime: 2019-11-07 09:52:19
+ * @LastEditTime: 2019-11-08 09:40:21
  */
-const themeConfig = require('./config/themeConfig').themeConfig
+const themeConfig = require('./config/themeConfig').themeConfig;
 module.exports = {
     title: 'Hello zx-util-ui',
     port: 9991,
@@ -22,7 +22,7 @@ module.exports = {
     configureWebpack: {
         resolve: {
           alias: {
-            '@alias': 'path/to/some/dir'
+            // '@alias': __dirname + 'public'
           }
         }
       }
