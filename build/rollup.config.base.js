@@ -4,7 +4,7 @@
  * @Author: bhabgs
  * @Date: 2019-10-29 10:56:25
  * @LastEditors: bhabgs
- * @LastEditTime: 2019-11-07 17:03:15
+ * @LastEditTime: 2019-11-08 09:39:55
  */
 import resolve from 'rollup-plugin-node-resolve'; // 告诉 Rollup 如何查找外部模块
 import commonjs from 'rollup-plugin-commonjs'; // 将CommonJS模块转换为 ES2015 供 Rollup 处理
@@ -16,7 +16,6 @@ import postcss from 'rollup-plugin-postcss';
 import autoprefixer from 'autoprefixer';
 import cssnano from 'cssnano';
 import replace from 'rollup-plugin-replace';
-import varless from 'postcss-simple-vars';
 
 const colors = {
     blue: '#056ef0'
