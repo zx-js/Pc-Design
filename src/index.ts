@@ -4,12 +4,12 @@
  * @Author: bhabgs
  * @Date: 2019-10-29 10:54:09
  * @LastEditors: bhabgs
- * @LastEditTime: 2019-11-07 17:01:22
+ * @LastEditTime: 2019-11-08 10:17:17
  */
 import Vue from 'vue';
 import vueComponents from './components';
 import directives from './directives';
-import zxUtil from './packages';
+import Zutil from './packages';
 
 // 开发组件时可以使用自定义指令
 Vue.use(directives);
@@ -31,7 +31,8 @@ const install = function(Vue: any) {
     // 指令
     Vue.use(directives);
     // 工具
-    Vue.prototype.$zxUtil = zxUtil;
+    Vue.prototype.$Zutil = Zutil;
+
     // 组件
     vueComponents.forEach((component) => Vue.component(component.name, component));
 };
@@ -41,4 +42,4 @@ if (typeof window !== 'undefined' && window.Vue) {
     install(window.Vue);
 }
 
-export default { install, ...componentsExportList };
+export default { install, Zutil, ...componentsExportList };

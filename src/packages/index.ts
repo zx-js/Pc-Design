@@ -4,8 +4,10 @@
  * @Author: bhabgs
  * @Date: 2019-10-29 16:40:33
  * @LastEditors: bhabgs
- * @LastEditTime: 2019-10-29 16:52:01
+ * @LastEditTime: 2019-11-08 10:08:57
  */
-export default () => {
-    console.log('')
+import utils from './utils'
+export default {
+    utils
 }
+
