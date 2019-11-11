@@ -1,0 +1,95 @@
+@z-prefix: z;
+@z-prefix-cls: ~'@{z-prefix}-tag';
+.@{z-prefix-cls} {
+  padding: 0 10px;
+  box-sizing: border-box;
+  border-radius: 10px;
+  text-align: center;
+  background-color: @InfoColor;
+  border: none;
+  color: #fff;
+  position: relative;
+  cursor: pointer;
+  .icon {
+    cursor: pointer;
+    &:hover {
+      background-color: @BorderColor-2;
+    }
+  }
+  &:focus{
+    outline:0;
+  } 
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    pointer-events: none;
+    background-color: #333;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    opacity: 0;
+    transition: all .3s;
+    border-radius: 10px;
+  }
+  &:active:after {
+    opacity: .3;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    transition: 0s;
+  }
+  // 大size
+  &-large {
+    height: 45px;
+    line-height: 45px;
+    font-size: 23px;
+    .icon {
+      font-size: 15px;
+    }
+    &::after {
+      top: -10px;
+      bottom: -10px;
+      left: -10px;
+      right: -10px;
+    }
+  }
+  // 中size
+  &-small {
+    height: 35px;
+    line-height: 35px;
+    font-size: 22px;
+    .icon {
+      font-size: 14px;
+    }
+    &::after {
+      top: -8px;
+      bottom: -8px;
+      left: -8px;
+      right: -8px;
+    }
+  }
+  // 小size
+  &-mini {
+    height: 30px;
+    line-height: 30px;
+    font-size: 20px;
+    .icon {
+      font-size: 13px;
+    }
+    &::after {
+      top: -5px;
+      bottom: -5px;
+      left: -5px;
+      right: -5px;
+    }
+  }
+  // 边框
+  &-border {
+    border: 1px solid @BorderColor-1;
+  }
+}
+
+// 预设颜色
+@colors: pink, magenta, red, volcano, orange, yellow, gold, cyan, lime, green, blue, geekblue,
+    purple;
