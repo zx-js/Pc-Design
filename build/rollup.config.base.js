@@ -17,9 +17,6 @@ import autoprefixer from 'autoprefixer';
 import cssnano from 'cssnano';
 import replace from 'rollup-plugin-replace';
 
-const colors = {
-    blue: '#056ef0'
-}
 export default {
     input: 'src/index.ts',
     plugins: [
@@ -33,13 +30,13 @@ export default {
         }),
         postcss({
             plugins: [autoprefixer, cssnano],
-            extract: 'dist/mt.style.css' // 输出路径
+            extract: 'dist/mt.style.css', // 输出路径
         }),
         commonjs(),
         vue({ css: false }),
         replace({
             include: 'src/*',
-            '$them': 'red',
+            $them: 'red',
             'process.env.NODE_ENV': JSON.stringify('development'),
             'process.env.VUE_ENV': JSON.stringify('browser'),
         }),
@@ -49,4 +46,5 @@ export default {
             plugins: ['transform-vue-jsx', 'external-helpers'], // jsx语法
         }),
     ],
+    external: ['vue', 'vue-property-decorator'],
 };
