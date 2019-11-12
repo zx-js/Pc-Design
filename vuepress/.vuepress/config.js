@@ -4,7 +4,7 @@
  * @Author: bhabgs
  * @Date: 2019-11-06 16:39:45
  * @LastEditors: 王晓龙
- * @LastEditTime: 2019-11-12 16:56:28
+ * @LastEditTime: 2019-11-12 16:58:17
  */
 const themeConfig = require('./config/themeConfig').themeConfig;
 module.exports = {

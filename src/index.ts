@@ -4,7 +4,7 @@
  * @Author: bhabgs
  * @Date: 2019-10-29 10:54:09
  * @LastEditors: 王晓龙
- * @LastEditTime: 2019-11-12 16:57:03
+ * @LastEditTime: 2019-11-12 16:58:10
  */
 import Vue from 'vue';
 import { compontents } from './components';
