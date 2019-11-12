@@ -2,30 +2,19 @@ import { Component, Vue, Prop } from 'vue-property-decorator';
 
 @Component
 export default class ZTimeline extends Vue {
-    // @Prop(String)
-    // private propA: string;
-    msg: string = 'This is z timeline component';
-    render(): any {
+    /**
+     * @Param reverse {boolean} @Required false @Default -- @Options -- @Description 节点排序
+     */
+    @Prop({ type: Boolean, default: false }) private reverse?: boolean;
+
+    render() {
+        let slots = this.$slots.default || [];
+        if (this.reverse) {
+            slots = slots.reverse();
+        }
         return (
             <div class="z-timeline">
-                <div class="z-timeline-inner">
-                    <div class="z-timeline-item">
-                        <div class="z-timeline-line"></div>
-                        <div class="z-timeline-dot"></div>
-                        <div class="z-timeline-content">
-                            <div class="z-timeline-title">我是标题</div>
-                            <div class="z-timeline-summary">我是内容</div>
-                        </div>
-                    </div>
-                    <div class="z-timeline-item">
-                        <div class="z-timeline-line"></div>
-                        <div class="z-timeline-dot"></div>
-                        <div class="z-timeline-content">
-                            <div class="z-timeline-title">我是标题</div>
-                            <div class="z-timeline-summary">我是内容</div>
-                        </div>
-                    </div>
-                </div>
+                <div class="z-timeline-inner">{slots}</div>
             </div>
         );
     }
