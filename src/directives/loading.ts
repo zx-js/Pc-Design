@@ -10,7 +10,7 @@ export default (Vue: any) => {
                     el: document.createElement('div'),
                 });
                 mask.$props.fullScreen = false;
-                mask.$props.markVisible = true;
+                mask.$props.visible = true;
                 el.appendChild(mask.$el);
             }
            
