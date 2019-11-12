@@ -1,7 +1,7 @@
 <template>
   <div id="themeDemo">
     <div class="fill">
-      <span class="theme-demo-title"> fill: </span>
+      <strong class="theme-demo-title"> fill: </strong>
       <z-tag v-for="(i, key) in tags"
         :key="key"
         :type="i.type"
@@ -10,7 +10,7 @@
         @close="handleClose">{{i.title}}</z-tag>
     </div>
     <div class="plain">
-      <span class="theme-demo-title"> plain: </span>
+      <strong class="theme-demo-title"> plain: </strong>
       <z-tag v-for="(i, key) in tags2"
         :key="key"
         :type="i.type"

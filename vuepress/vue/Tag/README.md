@@ -7,17 +7,20 @@
  * @LastEditTime: 2019-11-08 09:44:44
  -->
 # tag
-> 采用vue组件编写方案 可使用.vue,与tsx延续方案
+> 进行标记和分类的小标签。
 
-### Who（lx）
+::: warning 预计实现功能
 
-1. tag颜色定制
-2. tag 大小 size、large、small、mini  默认：large
-3. 可删除tag
+1. tag 大小改变：large、small、mini  默认：large
+2. tag可关闭
+3. tag主题定制
 4. 删除是否需要确认
 5. ...自行发挥
+6. 与checkbox同类功能的复选标签
 
-## Demo
+:::
+
+## 代码演示
 
 -   ### 基础用法
 
@@ -48,9 +51,17 @@
     <templates-demo name="tag-demo-theme">
     <<< @/vuepress/.vuepress/components/tag/demo-theme.vue
     </templates-demo>
+    
+-  ### 可多选标签-类似于checkbox效果
+
+    <templates-demo name="tag-demo-check-tag">
+    <<< @/vuepress/.vuepress/components/tag/demo-check-tag.vue
+    </templates-demo>
 
 
 ## API
+
+### tag
 
 Attributes
 | 参数    | 描述                 | 类型   | 是否必填 | 可选值 | 默认值 |
@@ -59,13 +70,24 @@ Attributes
 | closable | 是否可关闭 | boolean | false    | -      | false      |
 | isVisible | 是否显示 | boolean | false    | -      | true      |
 | type | 类型 | string | false    | success、info、warning、danger       |  info    |
-| theme | 类型 | string | false    | fill、plain       |  plain    |
+| theme | 主题 | string | false    | fill、plain       |  plain    |
 
 Events
 | 事件名称    | 描述                 | 回调参数   |
 | :------ | :------------------- | :----- | :------- | :----- | :----- |
 | click    | 点击Tag时触发的事件                 | -   |
 | close    | 关闭Tag时触发的事件                 | -   |
+
+### check-tag
+Attributes
+| 参数    | 描述                 | 类型   | 是否必填 | 可选值 | 默认值 |
+| :------ | :------------------- | :----- | :------- | :----- | :----- |
+| checked(v-model) | 设置标签的选中状态	 | boolean | false    | -       |  false    |
+
+Events
+| 事件名称    | 描述                 | 回调参数   |
+| :------ | :------------------- | :----- | :------- | :----- | :----- |
+| change    | 改变tag时触发的回调                 | (checked) => void   |
 </script>
 
 
