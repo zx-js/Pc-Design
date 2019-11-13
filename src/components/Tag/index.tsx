@@ -61,10 +61,17 @@ export default class ZTag extends Vue {
     // 关闭按钮操作
     public handleClose(e: any) {
         e.stopPropagation();
+        if (e.defaultPrevented) {
+            return;
+        }
          const { hasConfirm, confirmMessage } = this;
         if (hasConfirm) {
             const conf = confirm(confirmMessage);
-            this.$emit('close', conf);
+            // conf 是否关闭 e 当前元素
+            this.$emit('close', {
+                conf,
+                e,
+            });
             return;
         }
         this.$emit('close', e);
