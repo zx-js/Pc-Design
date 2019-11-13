@@ -4,7 +4,7 @@
  * @Author: bhabgs
  * @Date: 2019-11-06 16:37:55
  * @LastEditors: bhabgs
- * @LastEditTime: 2019-11-12 16:35:05
+ * @LastEditTime: 2019-11-13 12:23:14
  -->
 <!-- # 组件使用指南 -->
 
@@ -24,6 +24,16 @@
 > 5. 主题颜色存放在src/styles/theme/default.less
 > 6. iconfont 在index.less 下引入 每次更新图标后请及时更换在线地址
 
+## 如需看docs
+在项目根目录
+``` bash
+    git clone https://github.com/zx-js/zx-util-ui-docs.git
+```
+将`zx-util-ui-docs` 文件夹名称修改为 `docs`
+
+``` npm
+   yarn dev && yarn docs:dev
+```
 ## 运行组件库
 
 ```bash
