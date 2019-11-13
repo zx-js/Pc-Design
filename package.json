@@ -1,6 +1,6 @@
 {
     "name": "zx-util-ui",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "description": "vue 组件开发框架",
     "main": "./src/index.ts",
     "scripts": {
@@ -10,8 +10,8 @@
         "build:es": "rollup --config build/rollup.config.es.ts",
         "build:iife": "rollup --config build/rollup.config.iife.ts",
         "clear:dir": "node build/clearDir.ts",
-        "docs:dev": "vuepress dev vuepress",
-        "docs:build": "vuepress build vuepress"
+        "docs:dev": "vuepress dev docs",
+        "docs:build": "vuepress build docs"
     },
     "keywords": [
         "bhabgs"
