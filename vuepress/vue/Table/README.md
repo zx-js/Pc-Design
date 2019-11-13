@@ -1,15 +1,35 @@
 <!--
- * @abstract: 
- * @version: 
+ * @abstract:
+ * @version:
  * @Author: bhabgs
  * @Date: 2019-11-12 09:06:17
- * @LastEditors: bhabgs
- * @LastEditTime: 2019-11-12 09:13:07
+ * @LastEditors: 王晓龙
+ * @LastEditTime: 2019-11-13 10:30:16
  -->
-# table 组件
-> 应用vue组件开发方式进行开发
 
+# `table` 组件
 
-### Who To Do（zx） 支持markdown table编写
-1. 符合原生table标签风格 tbody、thead...
-2. 支持多种table风格（'default', 'stripe', 'border'）
+## Features
+
+::: warning 实现功能
+
+1. 符合原生 table 标签风格 tbody、thead...
+2. 支持多种 table 风格（'default', 'stripe', 'border'）
+
+:::
+
+## Demo
+
+-   ### 基础用法
+
+    <templates-demo name="table-demo1">
+    <<< @/vuepress/.vuepress/components/table/demo1.vue
+    </templates-demo>
+
+## API
+
+-   ### table
+
+    | 参数 | 描述 | 类型 | 是否必填 | 可选值 | 默认值 |
+    | :--- | :--- | :--- | :------- | :----- | :----- |
+
