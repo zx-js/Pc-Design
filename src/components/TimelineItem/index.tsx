@@ -1,4 +1,4 @@
-import { Component, Vue, Prop } from 'vue-property-decorator';
+import { Component, Vue, Prop, Inject } from 'vue-property-decorator';
 
 @Component
 export default class ZTimelineItem extends Vue {
@@ -14,6 +14,9 @@ export default class ZTimelineItem extends Vue {
     @Prop({ type: String }) private dotColor?: string;
     @Prop({ type: String }) private lineColor?: string;
     @Prop({ type: String }) private lineType?: string;
+
+    @Inject()
+    timeline!: any;
 
     render() {
         let dotSlots = this.$slots.dot || <span class="z-timeline-dot" style={`border-color:${this.dotColor}`}></span>;
