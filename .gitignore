@@ -4,5 +4,6 @@ dist
 .prettierignore
 .DS_Store
 */.DS_Store
-
+/vuepress/
+/docs/
 .vscode
