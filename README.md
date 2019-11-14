@@ -1,16 +1,39 @@
 <!--
- * @abstract:
- * @version:
+ * @abstract: 
+ * @version: 
  * @Author: bhabgs
- * @Date: 2019-10-29 14:22:46
+ * @Date: 2019-11-06 16:37:55
  * @LastEditors: bhabgs
- * @LastEditTime: 2019-11-12 10:44:23
+ * @LastEditTime: 2019-11-13 12:23:14
  -->
+<!-- # 组件使用指南 -->
 
-# 美腾科技工厂前端组工具集合
+<p style="color: red; font-size: 50px; text-align:center; padding-top: 5rem;">
+    我们不是vue的开发者，我们只是vue的搬运工
+</p>
 
-> 美腾科技工厂常用的组件开发
 
+## 资源地址
+[在线文档](http://bhabgs.com/docs/)
+## 开发者须知
+> 该框架既定名称为zx-util-ui less 存在层级关系，父级别定义的变量 通过`@import`能够 集成到子级别引用
+> 1. 框架前缀名称要求 
+> 2. `style class` 类名为**zx**开头 `例：zx-button`
+> 3. `.tsx` 组件名称 class类 为大写的Z开头 `例: ZButton`
+> 4. 组件文件夹命名 首字母应大写 `例: Button`
+> 5. 主题颜色存放在src/styles/theme/default.less
+> 6. iconfont 在index.less 下引入 每次更新图标后请及时更换在线地址
+
+## 如需看docs
+在项目根目录
+``` bash
+    git clone https://github.com/zx-js/zx-util-ui-docs.git
+```
+将`zx-util-ui-docs` 文件夹名称修改为 `docs`
+
+``` npm
+   yarn dev && yarn docs:dev
+```
 ## 运行组件库
 
 ```bash
@@ -30,6 +53,8 @@ yarn build / npm run build
 # 进入
 yarn docs:dev / npm run docs:dev
 ```
+
+
 
 ## vue 组件
 
@@ -59,20 +84,21 @@ export default class Zui extends {
 
 > 工具的开发方案需要在 src/packages 建立自己的包文件夹，可采用 ts 方案开发，包的到处方案是在包的根目录下建立 index.ts。
 
-## 包格式
+1. 
 
-> js 组件包以及 util 工具请在 src/packages 下进行开发 导出方案以下为标准
+## style 格式
 
-```javascript
-// index.ts
-export default {
-    install: Log,
-    name: 'Log',
-    version: '1.0.0',
-};
+> 类名定义前缀全部以z开头
+> 1. 避免与其他框架名字重复
+> 2. 方便统一修改
+> 3. 框架统一性
+
+
+``` less
+.z-button{
+
+}
+.z-{any} {
+
+}
 ```
-
--   [ ] 正在引入单元测试
--   [x] 框架搭建基本完成
--   [x] 加入 vue 编译组件
--   [x] 自动引入组件
