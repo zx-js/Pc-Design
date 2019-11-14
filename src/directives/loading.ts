@@ -7,7 +7,7 @@
  * @LastEditTime: 2019-11-12 15:51:51
  */
 import Vue from 'vue';
-import Loading from '../components/loading/index';
+import Loading from '../components/Loading/index';
 const Mask = Vue.extend(Loading);
 const install = (Vue: any) => {
     return Vue.directive('z-loading', {
