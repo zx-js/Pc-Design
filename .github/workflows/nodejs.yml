@@ -24,6 +24,8 @@ jobs:
       run: npm install
     - name: 编译源码
       run: npm run build
+      env:
+        ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
     - name: 编译文档
       run: npm run deploy
       env:
