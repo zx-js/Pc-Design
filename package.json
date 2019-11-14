@@ -11,7 +11,8 @@
     "build:iife": "rollup --config build/rollup.config.iife.js",
     "clear:dir": "node build/clearDir.ts",
     "docs:dev": "vuepress dev docs",
-    "docs:build": "vuepress build docs"
+    "docs:build": "vuepress build docs",
+    "deploy": "bash deploy.sh"
   },
   "keywords": [
     "bhabgs"
