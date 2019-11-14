@@ -9,11 +9,9 @@
 # Loading
 
 ::: warning 预计实现功能
-
 1. loading
 2. 根据指令进行loading
 3. 定制化loading样式
-
 :::
 
 ## loading
@@ -44,9 +42,9 @@
 
 ## API
 
-| 参数            | 描述                 | 类型    | 是否必填 | 可选值          | 默认值                   |
-| :---------------| :-------------------| :-------| :------- | :--------------| :---------------------- |
-| dotBackground   | 豆豆背景颜色         | string  | false    | -              | #333                    |
-| markBackground  | 遮罩层背景颜色       | string  | false    | -              | rgba(119, 111, 111, .7)'|
-| visible         | 显示隐藏             | boolean  | false   | true/false     | false                   |
-| fullScreen      | 全屏还是模块内       | boolean  | false   | true/false     | true                     |
+| 参数 | 描述 | 类型 | 是否必填 | 可选值 | 默认值 |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| dotBackground | 豆豆背景颜色 | string | false | - | #333 |
+| markBackground | 遮罩层背景颜色 | string | false | - | rgba(119, 111, 111, .7) |
+| visible | 显示隐藏 | boolean | false | true/false | false |
+| fullScreen | 全屏还是模块内 | boolean | false | true/false | true |
