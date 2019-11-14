@@ -26,7 +26,5 @@ jobs:
       run: npm run build
       env:
         ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-    - name: 编译文档
-      run: npm run deploy
-      env:
+        BUILD_SCRIPT: npm run deploy
         CI: true
