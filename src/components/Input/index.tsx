@@ -24,7 +24,7 @@ export default class ZInput extends Vue {
 
   // render pre
   public renderPre() {
-    return <span class={'z-input-pre'}>aaa</span>
+    return <span class={'z-input-pre'}>aaa</span>;
   }
 
   // render Label
@@ -35,8 +35,8 @@ export default class ZInput extends Vue {
 
   // render input
   public renderInput() {
-    const { type, setInputType, setInputClass } = this;
-    return <input type={setInputType()} class={[setInputClass()]} />
+    const { setInputType, setInputClass } = this;
+    return <input type={setInputType()} class={[setInputClass()]} />;
   }
 
   public render() {

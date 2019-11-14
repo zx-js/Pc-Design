@@ -1,10 +1,10 @@
 /*
- * @abstract: 
- * @version: 
+ * @abstract:
+ * @version:
  * @Author: wpp
  * @Date: 2019-11-08 11:48:49
- * @LastEditors: wpp
- * @LastEditTime: 2019-11-14 11:57:47
+ * @LastEditors: bhabgs
+ * @LastEditTime: 2019-11-14 14:44:02
  */
 import { Vue, Component, Prop } from 'vue-property-decorator';
 @Component

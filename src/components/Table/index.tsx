@@ -19,7 +19,7 @@ export default class ZTable extends Vue {
   tableData = this.data;
 
   render() {
-    const slots = this.$slots.default || [];
+    // const slots = this.$slots.default || [];
 
     // console.log(slots);
     // console.log(this.data);
