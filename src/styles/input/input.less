@@ -2,9 +2,16 @@
 @z-input-prefix: z;
 @z-input-prefix-cls: ~'@{z-input-prefix}-input';
 .@{z-input-prefix-cls} {
+  width: 100%;
   display: flex;
   align-items: center;
-  &-text {
+  &-box {
+    display: flex;
+    align-items: center;
+  }
+  &-item {
+    width: 100%;
+    outline: none;
     border-radius: 4px;
     box-shadow: none;
     border: none;
@@ -12,16 +19,64 @@
     border: 1px solid @ActiveColor;
     height: 40px;
     line-height: 40px;
-    color: @Black;
+    color: @FontColor-2;
     font-size: @medium-font-size;
     box-sizing: border-box;
+    &::-webkit-input-placeholder { /* WebKit browsers */
+      color: @FontColor-4;
+      font-size: @medium-font-size;
+    }
+    &::-moz-placeholder { /* Mozilla Firefox 19+ */
+      color: @FontColor-4;
+      font-size: @medium-font-size;
+    }
+    &:-ms-input-placeholder { /* Internet Explorer 10+ */
+      color: @FontColor-4;
+      font-size: @medium-font-size;
+    }
   }
   &-label {
     display: inline-block;
     width: auto;
     text-align: left;
     font-size: @medium-font-size;
-    color: @Black;
-    width: 100px;
+    color: @FontColor-1;
+  }
+  &-disabled {
+    border-color: @DisableColor;
+    background-color: @BorderColor-4;
+    color: @FontColor-4;
+    cursor: not-allowed;
+  }
+  // 尺寸
+  &-item-small {
+    padding: @small-padding-size;
+    font-size: @small-font-size;
+    height: 38px;
+    line-height: 38px;
+    &::-webkit-input-placeholder { /* WebKit browsers */
+      font-size: @small-font-size;
+    }
+    &::-moz-placeholder { /* Mozilla Firefox 19+ */
+      font-size: @small-font-size;
+    }
+    &:-ms-input-placeholder { /* Internet Explorer 10+ */
+      font-size: @small-font-size;
+    }
+  }
+  &-item-mini {
+    padding: @mini-padding-size;
+    font-size: @mini-font-size;
+    height: 36px;
+    line-height: 36px;
+    &::-webkit-input-placeholder { /* WebKit browsers */
+      font-size: @mini-font-size;
+    }
+    &::-moz-placeholder { /* Mozilla Firefox 19+ */
+      font-size: @mini-font-size;
+    }
+    &:-ms-input-placeholder { /* Internet Explorer 10+ */
+      font-size: @mini-font-size;
+    }
   }
 }
