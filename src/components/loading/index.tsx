@@ -1,7 +1,7 @@
-import { Vue, Component, Prop } from '@/components/Loading/node_modules/vue-property-decorator';
+import { Vue, Component, Prop } from 'vue-property-decorator';
 @Component
 export default class Zloading extends Vue {
-    @Prop({ default: '@Black' }) public dotBackground?: string;
+    @Prop({ default: '#333' }) public dotBackground?: string;
     @Prop({ default: 'rgba(0, 0, 0, .3)' }) public markBackground?: string;
     @Prop({ default: false }) public visible?: boolean;
     @Prop({ default: true }) public fullScreen?: boolean;
