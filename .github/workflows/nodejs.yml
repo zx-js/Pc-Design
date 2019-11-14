@@ -1,9 +1,9 @@
-name: node ci run
+name: 文档发布
 
 on:
   push:
     branches:
-    - release
+    - develop
 
 jobs:
   test:
@@ -22,7 +22,7 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - name: 安装项目依赖
       run: npm install
-    - name: 编译源码
-      run: npm run build
+    - name: 编译文档
+      run: npm run deploy
       env:
         CI: true
