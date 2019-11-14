@@ -5,6 +5,9 @@ export default class ZTableColumn extends Vue {
   @Inject()
   table!: any;
 
+  @Inject()
+  tableData!: any[];
+
   render() {
     // let slots = this.$slots.default || [];
 

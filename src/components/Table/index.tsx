@@ -1,25 +1,34 @@
-import { Component, Vue, Provide } from 'vue-property-decorator';
+import { Component, Vue, Prop, Provide } from 'vue-property-decorator';
 import TableHeader from './tableHead';
 
 @Component
 export default class ZTable extends Vue {
+  @Prop({ type: Array, default: [] }) private data?: any[]; // 标题
+
   @Provide()
   table = this;
+
+  @Provide()
+  slots = this.$slots.default || [];
+
+  @Provide()
+  tableData = this.data;
 
   render() {
     const slots = this.$slots.default || [];
 
-    console.log(slots);
+    // console.log(slots);
+    // console.log(this.data);
 
     return (
       <div class="z-table">
-        {/* table header */}
         <TableHeader />
         <div class="tbody">
           <div class="tbody-scroll">
             <table>
               <colgroup>
-                <col style="width:100px; background:#f00;" />
+                {/* <col style="width:100px; background:#f00;" /> */}
+                <col />
               </colgroup>
               <tbody>
                 <tr>

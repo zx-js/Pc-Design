@@ -5,14 +5,21 @@ export default class ZTableHead extends Vue {
   @Inject()
   table!: any;
 
+  @Inject()
+  slots!: any[];
+
+  @Inject()
+  tableData!: any[];
+
   render() {
     // let slots = this.$slots.default || [];
+    console.log(this.slots);
 
     return (
-      <div class="thead">
+      <div class="z-table-header">
         <table>
           <colgroup>
-            <col style="width:100px; background:#f00;" />
+            <col />
           </colgroup>
           <thead>
             <tr>
