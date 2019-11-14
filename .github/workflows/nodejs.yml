@@ -18,10 +18,11 @@ jobs:
     - uses: actions/checkout@master
     - name: 初始化node环境
       uses: actions/setup-node@v1
-      
       with:
         node-version: ${{ matrix.node-version }}
-    - name: npm install, build, and test
+    - name: 安装项目依赖
+      run: npm run install
+    - name: 运行
       run: npm run dev
       env:
         CI: true
