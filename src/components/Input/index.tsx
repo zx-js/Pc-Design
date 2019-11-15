@@ -1,7 +1,11 @@
-import { Component, Vue, Prop } from 'vue-property-decorator';
+import { Component, Vue, Prop, Model } from 'vue-property-decorator';
 
 @Component
 export default class ZInput extends Vue {
+  @Model('input', {
+    type: [Number, String]
+  }) public inputValue!: number | string;
+  
   // value
   @Prop({
     type: String
