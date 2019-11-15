@@ -1,21 +1,18 @@
 import { Component, Vue, Inject } from 'vue-property-decorator';
 
 @Component
-export default class ZTableHead extends Vue {
+export default class ZTableBody extends Vue {
   /* ************************ Inject ************************ */
   @Inject()
   private table!: any;
 
   /* ************************ Main ************************** */
-  private get getHTs(): JSX.Element {
-    console.log(this.table);
-    return (
-      <tr>
-        {this.table.column.map((item: any) => (
-          <th>{item.label}</th>
-        ))}
-      </tr>
-    );
+  private getTDs(data: any): JSX.Element[] {
+    return this.table.column.map((col: any) => <td>{data[col.prop]}</td>);
+  }
+
+  get getTRs(): JSX.Element[] {
+    return this.table.data.map((data: any) => <tr>{this.getTDs(data)}</tr>);
   }
 
   /* ************************ Render ************************ */
@@ -23,10 +20,10 @@ export default class ZTableHead extends Vue {
     const colSlots = this.$slots.default || [];
 
     return (
-      <div class="z-table-head">
+      <div class="z-table-body">
         <table>
           {colSlots}
-          <thead>{this.getHTs}</thead>
+          <tbody>{this.getTRs}</tbody>
         </table>
       </div>
     );

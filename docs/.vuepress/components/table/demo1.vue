@@ -1,19 +1,6 @@
-<!--
- * @Description: 
- * @Version: 0.0.1
- * @Author: 王晓龙
- * @Date: 2019-11-14 15:42:40
- * @LastEditors: 王晓龙
- * @LastEditTime: 2019-11-14 16:24:22
- -->
 <template>
   <div class="demo1">
-    <z-table :data="list">
-      <!-- <z-table-column v-for="(item, index) in list" :key="index"></z-table-column> -->
-      <z-table-column></z-table-column>
-      <z-table-column></z-table-column>
-      <z-table-column></z-table-column>
-    </z-table>
+    <z-table :column="column" :data="list"></z-table>
   </div>
 </template>
 
@@ -21,6 +8,25 @@
 export default {
   data() {
     return {
+      column: [
+        {
+          prop: 'name',
+          label: '姓名',
+          width: '200px'
+        },
+        {
+          prop: 'age',
+          label: '年龄'
+        },
+        {
+          prop: 'job',
+          label: '工作'
+        },
+        {
+          prop: 'address',
+          label: '地址'
+        }
+      ],
       list: [
         {
           name: '小明',
