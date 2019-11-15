@@ -4,7 +4,7 @@
  * @Author: bhabgs
  * @Date: 2019-11-12 09:06:17
  * @LastEditors: langxue
- * @LastEditTime: 2019-11-15 15:11:19
+ * @LastEditTime: 2019-11-15 16:44:23
  -->
 # input 组件
 > 应用vue组件开发方式进行开发
@@ -61,6 +61,7 @@
 | suffixIcon | 后置icon | String | false | - | - |
 | prefixIcon | 前置icon | String | false | - | - |
 | showWordLimit | 是否显示输入字数统计 | Boolean | false | - | false |
+| value(v-model) | 绑定值 | string / number | false | - | - |
 
 
 
