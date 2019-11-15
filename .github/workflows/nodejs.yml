@@ -28,7 +28,5 @@ jobs:
       run: npm run deploy:to
       env:
         ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-        BUILD_SCRIPT: npm run deploy
-    - name: 部署成功
-      run: npm run deploy:success
+        BUILD_SCRIPT: npm run deploy && npm run deploy:success
         CI: true
