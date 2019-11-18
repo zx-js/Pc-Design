@@ -4,7 +4,7 @@
  * @Author: bhabgs
  * @Date: 2019-11-12 09:06:17
  * @LastEditors: langxue
- * @LastEditTime: 2019-11-15 16:44:23
+ * @LastEditTime: 2019-11-18 12:23:48
  -->
 # input 组件
 > 应用vue组件开发方式进行开发
@@ -63,6 +63,11 @@
 | showWordLimit | 是否显示输入字数统计 | Boolean | false | - | false |
 | value(v-model) | 绑定值 | string / number | false | - | - |
 
+## slots
+| 参数    | 描述                               | 类型    | 是否必填 | 可选值        | 默认值 |
+| :------ | :--------------------------------- | :------ | :------- | :------------ | :----- |
+| prefix | 输入框头部内容 | - | - | - | - |
+| suffix | 输入框头部内容 | - | - | - | - |
 
 
 
