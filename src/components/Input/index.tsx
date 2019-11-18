@@ -109,12 +109,12 @@ export default class ZInput extends Vue {
 
   // 设置class
   public setInputClass() {
-    const { disabled, size, suffixIcon, prefixIcon } = this;
+    const { disabled, size, suffixIcon, prefixIcon, $slots } = this;
     return {
       [`z-input-${size}`]: size === 'medium' || '' ? null : size,
       'z-input-disabled': disabled,
-      'z-input-suffix': suffixIcon,
-      'z-input-prefix': prefixIcon
+      'z-input-suffix': suffixIcon || $slots.suffix,
+      'z-input-prefix': prefixIcon || $slots.prefix
     };
   }
 
@@ -133,11 +133,6 @@ export default class ZInput extends Vue {
     this.$emit('change', e.target.value);
   }
 
-  // render pre
-  public renderPre() {
-    return <span class={'z-input-pre'}>aaa</span>;
-  }
-
   // render Label
   public renderLabel() {
     const { label, labelWidth } = this;
@@ -147,23 +142,25 @@ export default class ZInput extends Vue {
     return label ? <span class={'z-input-label'} style={labelWidthStyle}>{label}:</span> : null;
   }
 
-  // render prefixIcon
+  // render prefixIcon or slot prefixIcon
   public renderPrefixIcon() {
-    const { prefixIcon } = this;
-    const prefix = prefixIcon ? <span class="z-input-prefix-icon">
+    const { prefixIcon, $slots } = this;
+    const prefixRender = prefixIcon || $slots.prefix ? <span class="z-input-prefix-icon">
       <span class="z-input-prefix-icon-inner">
-        <i class={['iconfont', prefixIcon]}></i>
+        <i class={['iconfont', prefixIcon]} if="prefixIcon"></i>
+        {$slots.prefix}
       </span>
     </span> : null;
-    return prefix;
+    return prefixRender;
   }
 
   // render suffixIcon
   public renderSuffixIcon() {
-    const { suffixIcon } = this;
-    const suffix = suffixIcon ? <span class="z-input-suffix-icon">
+    const { suffixIcon, $slots } = this;
+    const suffix = suffixIcon || $slots.suffix ? <span class="z-input-suffix-icon">
       <span class="z-input-suffix-icon-inner">
-        <i class={['iconfont', suffixIcon]}></i>
+        <i class={['iconfont', suffixIcon]} if="suffixIcon"></i>
+        {$slots.suffix}
       </span>
     </span> : null;
     return suffix;
