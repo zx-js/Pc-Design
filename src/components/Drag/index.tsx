@@ -4,7 +4,7 @@
  * @Author: wpp
  * @Date: 2019-11-08 11:48:49
  * @LastEditors: wpp
- * @LastEditTime: 2019-11-14 17:24:54
+ * @LastEditTime: 2019-11-15 11:25:13
  */
 import { Vue, Component, Emit } from 'vue-property-decorator';
 @Component
@@ -52,14 +52,14 @@ export default class Zdrag extends Vue {
     if (!this.lock) {
       return false;
     }
-    const boxWidth = document.getElementsByClassName('drag-box')[0].clientWidth;
-    const boxHeight = document.getElementsByClassName('drag-box')[0].clientHeight;
+    const boxWidth = document.getElementsByClassName('zx-drag-box')[0].clientWidth;
+    const boxHeight = document.getElementsByClassName('zx-drag-box')[0].clientHeight;
     const itemWidth = this.dragBox.offsetWidth;
     const itemHeight = this.dragBox.offsetHeight;
     const ml = e.clientX - (this.dragPositions.x - this.dragPositions.l);
     const mt = e.clientY - (this.dragPositions.y - this.dragPositions.t);
     // 水平方向的拖动及拖动限制
-    if (ml > 0 && ml < (boxWidth - itemWidth)) {
+    if (ml >= 0 && ml <= (boxWidth - itemWidth)) {
       this.resultPosition.rl = ml;
     } else if (ml < 0) {
 			this.resultPosition.rl = 0;
@@ -67,7 +67,7 @@ export default class Zdrag extends Vue {
 			this.resultPosition.rl = boxWidth - itemWidth;
     }
     // 垂直方向的拖动及拖动限制
-    if (mt > 0 && mt < (boxHeight - itemHeight)) {
+    if (mt >= 0 && mt <= (boxHeight - itemHeight)) {
 			this.resultPosition.rt = mt;
     } else if (mt < 0) {
       this.resultPosition.rt = 0;
@@ -76,7 +76,7 @@ export default class Zdrag extends Vue {
     }
 	}
 	
-  @Emit()
+  @Emit('getMovePosition')
   public mouseUpFn() {
     this.lock = false;
 		window.onmousemove = null;
@@ -86,11 +86,11 @@ export default class Zdrag extends Vue {
 	
 	render() {
 		const slotText = this.$slots.default ||
-			<div class="drag-item"></div>;
-		return <div class="drag-box">
+			<div class="zx-drag-item"></div>;
+		return <div class="zx-drag-box">
 			<div
 				ref="dragBox"
-				class="drag-main"
+				class="zx-drag-main"
 				on-mousedown={this.mouseDownFn}
 				style={this.zxDragPosition}
 			>{slotText}</div>

@@ -4,7 +4,7 @@
  * @Author: wpp
  * @Date: 2019-11-07 17:20:23
  * @LastEditors: wpp
- * @LastEditTime: 2019-11-14 16:44:01
+ * @LastEditTime: 2019-11-15 10:48:26
  -->
 # Drag
 
@@ -20,11 +20,8 @@
 <<< @/docs/.vuepress/components/Drag/demo.vue
 </templates-demo>
 
-## API
+## Event
 
-<!-- | 参数 | 描述 | 类型 | 是否必填 | 可选值 | 默认值 |
+| 参数 | 描述 | 类型 | 是否必填 | 可选值 | 默认值 |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| dotBackground | 豆豆背景颜色 | string | false | - | #333 |
-| markBackground | 遮罩层背景颜色 | string | false | - | rgba(119, 111, 111, .7) |
-| visible | 显示隐藏 | boolean  | false | true/false | false |
-| fullScreen | 全屏还是模块内 | boolean | false | true/false | true | -->
+| getMovePosition | 获取拖拽的位置 | function | false | - | - |
