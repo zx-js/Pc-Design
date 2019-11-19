@@ -4,7 +4,7 @@
  * @Author: wpp
  * @Date: 2019-11-08 11:48:49
  * @LastEditors: wpp
- * @LastEditTime: 2019-11-15 11:25:13
+ * @LastEditTime: 2019-11-18 14:44:32
  */
 import { Vue, Component, Emit } from 'vue-property-decorator';
 @Component
@@ -44,6 +44,7 @@ export default class Zdrag extends Vue {
     this.dragPositions.l = this.dragBox.offsetLeft;
     this.dragPositions.t = this.dragBox.offsetTop;
     this.lock = true;
+    document.body.style.userSelect = 'none';
     window.onmousemove = this.mouseMoveFn;
     window.onmouseup = this.mouseUpFn;
 	}
@@ -79,6 +80,7 @@ export default class Zdrag extends Vue {
   @Emit('getMovePosition')
   public mouseUpFn() {
     this.lock = false;
+    document.body.style.userSelect = 'auto';
 		window.onmousemove = null;
     window.onmouseup = null;
     return this.resultPosition;

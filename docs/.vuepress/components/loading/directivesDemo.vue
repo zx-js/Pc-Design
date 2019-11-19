@@ -3,11 +3,11 @@
  * @version: 
  * @Author: bhabgs
  * @Date: 2019-11-12 14:04:54
- * @LastEditors: bhabgs
- * @LastEditTime: 2019-11-12 15:53:03
+ * @LastEditors: wpp
+ * @LastEditTime: 2019-11-18 09:44:48
  -->
 <template>
-  <div class="directives-body" v-z-loading></div>
+  <div class="directives-body" v-Zloading></div>
 </template>
 <style>
 .directives-body {
