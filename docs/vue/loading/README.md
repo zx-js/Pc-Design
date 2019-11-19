@@ -4,7 +4,7 @@
  * @Author: bhabgs
  * @Date: 2019-11-07 17:20:23
  * @LastEditors: wpp
- * @LastEditTime: 2019-11-14 11:07:33
+ * @LastEditTime: 2019-11-18 09:43:36
  -->
 # Loading
 
@@ -22,7 +22,7 @@
 <<< @/docs/.vuepress/components/loading/loadingDemo.vue
 </templates-demo>
 
-### Loading 指令 (mt-loading)
+### Loading 指令 (Zloading)
 
 <templates-demo name="loading-directivesDemo">
 <<< @/docs/.vuepress/components/loading/directivesDemo.vue

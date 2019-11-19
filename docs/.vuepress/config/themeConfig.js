@@ -4,7 +4,7 @@
  * @Author: bhabgs
  * @Date: 2019-11-07 09:48:14
  * @LastEditors: 王晓龙
- * @LastEditTime: 2019-11-15 11:07:50
+ * @LastEditTime: 2019-11-19 09:28:33
  */
 const themeConfig = {
     nav: [
@@ -35,6 +35,7 @@ const themeConfig = {
             ['timeline/', 'timeline 时间轴'],
             ['Table/', 'table 表格'],
             ['Message/', 'Message提示'],
+            ['Drag/', 'drag拖动'],
             ['ml/', '马良docs'],
         ],
     },

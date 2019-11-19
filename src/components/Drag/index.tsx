@@ -1,23 +1,101 @@
 /*
- * @abstract: 
- * @version: 
+ * @abstract:
+ * @version:
  * @Author: wpp
  * @Date: 2019-11-08 11:48:49
  * @LastEditors: wpp
- * @LastEditTime: 2019-11-14 12:14:45
+ * @LastEditTime: 2019-11-18 14:44:32
  */
-import { Vue, Component } from 'vue-property-decorator';
+import { Vue, Component, Emit } from 'vue-property-decorator';
 @Component
 export default class Zdrag extends Vue {
+	public dragPositions = {
+    x: 0,
+    y: 0,
+    l: 0,
+    t: 0
+	}
+	
+  public resultPosition = {
+    rl: 0,
+    rt: 0
+	}
+	
+	public lock: boolean = false;
+	
+	public dragBox: any = null;
+
+	get zxDragPosition() {
+		return {
+			left: this.resultPosition.rl + 'px',
+			top: this.resultPosition.rt + 'px'
+		};
+	}
+
+	public mounted() {
+    this.$nextTick(() => {
+      this.dragBox = this.$refs.dragBox;
+    });
+	}
+
+	public mouseDownFn(e: any) {
+    this.dragPositions.x = e.clientX;
+    this.dragPositions.y = e.clientY;
+    this.dragPositions.l = this.dragBox.offsetLeft;
+    this.dragPositions.t = this.dragBox.offsetTop;
+    this.lock = true;
+    document.body.style.userSelect = 'none';
+    window.onmousemove = this.mouseMoveFn;
+    window.onmouseup = this.mouseUpFn;
+	}
+	
+  public mouseMoveFn(e: any) {
+    if (!this.lock) {
+      return false;
+    }
+    const boxWidth = document.getElementsByClassName('zx-drag-box')[0].clientWidth;
+    const boxHeight = document.getElementsByClassName('zx-drag-box')[0].clientHeight;
+    const itemWidth = this.dragBox.offsetWidth;
+    const itemHeight = this.dragBox.offsetHeight;
+    const ml = e.clientX - (this.dragPositions.x - this.dragPositions.l);
+    const mt = e.clientY - (this.dragPositions.y - this.dragPositions.t);
+    // 水平方向的拖动及拖动限制
+    if (ml >= 0 && ml <= (boxWidth - itemWidth)) {
+      this.resultPosition.rl = ml;
+    } else if (ml < 0) {
+			this.resultPosition.rl = 0;
+    } else {
+			this.resultPosition.rl = boxWidth - itemWidth;
+    }
+    // 垂直方向的拖动及拖动限制
+    if (mt >= 0 && mt <= (boxHeight - itemHeight)) {
+			this.resultPosition.rt = mt;
+    } else if (mt < 0) {
+      this.resultPosition.rt = 0;
+    } else {
+      this.resultPosition.rt = boxHeight - itemHeight;
+    }
+	}
+	
+  @Emit('getMovePosition')
+  public mouseUpFn() {
+    this.lock = false;
+    document.body.style.userSelect = 'auto';
+		window.onmousemove = null;
+    window.onmouseup = null;
+    return this.resultPosition;
+	}
+	
 	render() {
 		const slotText = this.$slots.default ||
-			<div class="drag-item"></div>
-		return <div class="drag-box">
+			<div class="zx-drag-item"></div>;
+		return <div class="zx-drag-box">
 			<div
 				ref="dragBox"
-				class="drag-main"
-			// style={{left: resultPosition.rl + "px", top: resultPosition.rt + "px"}}
+				class="zx-drag-main"
+				on-mousedown={this.mouseDownFn}
+				style={this.zxDragPosition}
 			>{slotText}</div>
-		</div>
+		</div>;
 	}
 }
