@@ -4,7 +4,7 @@
  * @Author: bhabgs
  * @Date: 2019-11-12 14:04:54
  * @LastEditors: wpp
- * @LastEditTime: 2019-11-19 09:41:22
+ * @LastEditTime: 2019-11-19 10:13:47
  */
 const install = (Vue: any) => {
   return Vue.directive('ZDrag', {
@@ -24,6 +24,7 @@ const install = (Vue: any) => {
           parentNode = el.parentNode;
           parentNode.style.position = 'relative';
           el.style.position = 'absolute';
+          el.style.zIndex = '5';
           dragAttribute.x = e.clientX;
           dragAttribute.y = e.clientY;
           dragAttribute.w = el.offsetLeft;

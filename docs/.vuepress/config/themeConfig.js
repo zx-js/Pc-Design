@@ -4,7 +4,7 @@
  * @Author: bhabgs
  * @Date: 2019-11-07 09:48:14
  * @LastEditors: wpp
- * @LastEditTime: 2019-11-19 09:56:41
+ * @LastEditTime: 2019-11-19 10:30:47
  */
 const themeConfig = {
     nav: [
@@ -36,6 +36,7 @@ const themeConfig = {
             ['Table/', 'table 表格'],
             ['Message/', 'Message提示'],
             ['Drag/', 'drag拖动'],
+            ['Scale/', 'scale缩放'],
             ['ml/', '马良docs'],
         ],
     },

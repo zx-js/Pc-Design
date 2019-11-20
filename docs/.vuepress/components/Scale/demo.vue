@@ -1,21 +1,17 @@
 <!--
  * @abstract:
  * @version:
- * @Author: bhabgs
+ * @Author: wpp
  * @Date: 2019-11-12 14:04:54
  * @LastEditors: wpp
- * @LastEditTime: 2019-11-19 10:22:06
+ * @LastEditTime: 2019-11-19 12:19:55
  -->
 <template>
-  <div class="drag-component">
-    <div class="drag">
-      <Zdrag @getMovePosition="dragPosition">
-        <div class="drag-item"></div>
-      </Zdrag>
-    </div>
-    <div class="result">
-      <p>left: <span>{{left}}</span>px</p>
-      <p>top: <span>{{top}}</span>px</p>
+  <div class="scale-component">
+    <div class="scale">
+      <ZScale>
+        <div class="scale-item"></div>
+      </ZScale>
     </div>
   </div>
 </template>
@@ -36,18 +32,18 @@ export default {
 }
 </script>
 <style>
-.drag {
+.scale {
   width: 500px;
   height: 380px;
   border: 1px solid #f0f0f0;
   border-radius: 3px;
+  box-sizing: border-box;
 }
-.drag-item{
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  overflow: hidden;
+.scale-item{
+  width: 100%;
+  height: 100%;
   background-color: #68b8f1;
+  box-sizing: border-box;
 }
 .result {
   display: flex;
