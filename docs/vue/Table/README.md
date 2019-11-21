@@ -3,8 +3,8 @@
  * @version:
  * @Author: bhabgs
  * @Date: 2019-11-12 09:06:17
- * @LastEditors: 王晓龙
- * @LastEditTime: 2019-11-18 16:51:46
+ * @LastEditors: bhabgs
+ * @LastEditTime: 2019-11-21 10:08:17
  -->
 
 # table 组件
@@ -20,27 +20,7 @@
 
 ### 基础用法
 
-<templates-demo name="table-demo1">
-<<< @/docs/.vuepress/components/table/demo1.vue
-</templates-demo>
-
-### 条纹型表格
-
-<templates-demo name="table-demo2">
-<<< @/docs/.vuepress/components/table/demo2.vue
-</templates-demo>
-
-### 边框型表格
-
-<templates-demo name="table-demo3">
-<<< @/docs/.vuepress/components/table/demo3.vue
-</templates-demo>
-
-### 对齐方式
-
-<templates-demo name="table-demo4">
-<<< @/docs/.vuepress/components/table/demo4.vue
-</templates-demo>
+> 目前编译有问题下次更新
 
 ## API
 
