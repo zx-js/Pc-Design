@@ -24,7 +24,6 @@ jobs:
       run: npm i
     - name: 编译源码
       run: npm run build
-    - name: 部署docs
       env:
         ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
         BUILD_SCRIPT: npm run deploy
