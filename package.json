@@ -10,11 +10,14 @@
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs",
     "deploy": "bash deploy.sh",
-    "deploy:to": "node .robot/bs-start.js",
-    "deploy:success": "node .robot/bs-success.js"
+    "deploy:to": "node .robot/robot.js",
+    "deploy:success": "cross-env msg=success node .robot/robot.js"
   },
   "keywords": [
-    "bhabgs"
+    "bhabgs",
+    "langxue",
+    "wpp",
+    "wangxiaolong"
   ],
   "author": "bhabgs",
   "license": "ISC",
