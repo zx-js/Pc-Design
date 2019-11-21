@@ -3,12 +3,12 @@
  * @version:
  * @Author: bhabgs
  * @Date: 2019-11-12 14:04:54
- * @LastEditors: wpp
- * @LastEditTime: 2019-11-19 11:24:29
+ * @LastEditors: bhabgs
+ * @LastEditTime: 2019-11-21 15:41:19
  */
 // 找到components文件夹下以.vue命名的文件
 
-import ZButton from './button/main';
+import ZButton from './Button/main';
 import Zloading from './Loading/main';
 import Zdrag from './Drag/main';
 import ZScale from './Scale/main';
