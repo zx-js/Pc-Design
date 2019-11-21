@@ -4,7 +4,7 @@
  * @Author: bhabgs
  * @Date: 2019-11-15 10:51:09
  * @LastEditors: bhabgs
- * @LastEditTime: 2019-11-15 10:53:03
+ * @LastEditTime: 2019-11-21 12:48:00
  */
 const ChatBot = require('dingtalk-robot-sender');
 
@@ -14,10 +14,13 @@ const robot = new ChatBot({
   secret: 'SEC4543a694125ea35cec15fa603659cc028fcd728e724f6904f3f628bc5c8ec60d',
 });
 let textContent = {
-  "msgtype": "text", 
-  "text": {
-    "content": "开始部署"
-  }
+  "msgtype": "link", 
+  "link": {
+            "text": "正在部署新的zx-util-ui 文档，请点击链接查看部署进度", 
+            "title": "CI部署DOCS通知", 
+            "picUrl": "", 
+            "messageUrl": "https://github.com/zx-js/zx-util-ui/actions"
+        }
 }
 robot.send(textContent)
   .then((res) => {
