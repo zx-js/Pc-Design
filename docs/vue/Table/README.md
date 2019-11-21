@@ -3,8 +3,8 @@
  * @version:
  * @Author: bhabgs
  * @Date: 2019-11-12 09:06:17
- * @LastEditors: 王晓龙
- * @LastEditTime: 2019-11-18 16:51:46
+ * @LastEditors: bhabgs
+ * @LastEditTime: 2019-11-21 10:03:44
  -->
 
 # table 组件
@@ -19,8 +19,8 @@
 ## Demo
 
 ### 基础用法
-
-<templates-demo name="table-demo1">
+> 目前编译有问题下次更新
+<!-- <templates-demo name="table-demo1">
 <<< @/docs/.vuepress/components/table/demo1.vue
 </templates-demo>
 
@@ -40,7 +40,7 @@
 
 <templates-demo name="table-demo4">
 <<< @/docs/.vuepress/components/table/demo4.vue
-</templates-demo>
+</templates-demo> -->
 
 ## API
 
