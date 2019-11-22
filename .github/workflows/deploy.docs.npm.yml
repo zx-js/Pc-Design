@@ -19,6 +19,7 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
+          registry-url: https://registry.npmjs.org/
       - name: 安装项目依赖
         run: npm i
       - name: 开始编译部署
@@ -41,19 +42,6 @@ jobs:
           npm run deploy
       - name: 部署成功通知
         run: npm run deploy:send text=最新版本zx-util-ui文档体精部署成功请点击链接查看 title=CI部署DOCS通知 url=https://zx-js.github.io/zx-util-ui-docs/ node .robot/robot.js
-  NPMPUBLISH:
-    needs: BUILDDOCS
-    runs-on: macOS-latest
-    steps:
-      - uses: actions/checkout@v1
-      - uses: actions/setup-node@v1
-        with:
-          node-version: 12
-          registry-url: https://registry.npmjs.org/
-      - name: 安装依赖
-        run: npm i
-      - name: 打包源码
-        run: npm run build
       - name: 发布最新版本至npm
       - run: npm publish
         env:
