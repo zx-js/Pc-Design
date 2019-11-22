@@ -1,18 +1,17 @@
 {
-    "compilerOptions": {
-      "target": "esnext",
-      "moduleResolution": "node",
-      "jsx": "preserve",
-      "allowJs": true,
-      "noEmit": true,
-      "strict": true,
-      "isolatedModules": true,
-      "esModuleInterop": true,
-      "noImplicitAny": false,
-      "strictNullChecks": false,
-      "experimentalDecorators": true
-    },
-    "include": [
-      "src"
-    ]
-  }
+  "compilerOptions": {
+    "target": "esnext",
+    "moduleResolution": "node",
+    "jsx": "preserve",
+    "allowJs": true,
+    "noEmit": true,
+    "strict": true,
+    "isolatedModules": true,
+    "esModuleInterop": true,
+    "noImplicitAny": false,
+    "strictNullChecks": false,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true
+  },
+  "include": ["src"]
+}
