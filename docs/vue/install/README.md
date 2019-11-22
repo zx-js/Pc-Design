@@ -4,7 +4,7 @@
  * @Author: bhabgs
  * @Date: 2019-11-07 10:04:23
  * @LastEditors: bhabgs
- * @LastEditTime: 2019-11-07 11:58:58
+ * @LastEditTime: 2019-11-21 17:07:37
  -->
 
 # 安装
@@ -14,11 +14,15 @@
 ### npm 安装
 
 ```bash
-npm i
+npm i -D zx-util-ui
 ```
 
 ### yarn 安装
 
 ```bash
-    yarn
+yarn add -D zx-util-ui
 ```
+
+### vue 项目引入
+
+> `import zui from 'zx-util-ui'`
