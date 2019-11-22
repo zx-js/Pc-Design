@@ -50,6 +50,9 @@ jobs:
         with:
           node-version: 12
           registry-url: https://registry.npmjs.org/
+      - name: 安装依赖
+        run: npm i
+      - name: 打包源码
         run: npm run build
       - name: 发布最新版本至npm
       - run: npm publish
