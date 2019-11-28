@@ -4,7 +4,7 @@
  * @Author: bhabgs
  * @Date: 2019-11-06 16:39:45
  * @LastEditors: bhabgs
- * @LastEditTime: 2019-11-27 16:51:13
+ * @LastEditTime: 2019-11-28 10:56:04
  */
 const themeConfig = require("./config/themeConfig").themeConfig;
 module.exports = {
