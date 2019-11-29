@@ -1,4 +1,4 @@
-import { Component, Vue, Prop, Model } from 'vue-property-decorator';
+import { Component, Vue, Prop, Model, Watch } from 'vue-property-decorator';
 import {VNode} from 'vue';
 
 @Component
@@ -78,6 +78,10 @@ export default class ZInput extends Vue {
   @Prop({
     type: Boolean
   }) public clearable!: boolean;
+
+  @Watch('value') public getValue(val) {
+    console.log(val);
+  }
 
   public hovering: boolean = false;
   public focused: boolean = false;
@@ -161,12 +165,21 @@ export default class ZInput extends Vue {
 
   // 鼠标进入
   public handleMouseEnter(e: any) {
+    e.stopPropagation();
     this.hovering = true;
   }
 
   // 鼠标离开
   public handleMouseLeave(e: any) {
     this.hovering = false;
+  }
+
+  // 清空
+  public handleClear(e: any) {
+    e.stopPropagation();
+    this.$emit('input', '');
+    this.$emit('change', '');
+    this.$emit('clear');
   }
 
   // render Label
@@ -192,30 +205,39 @@ export default class ZInput extends Vue {
 
   // render suffixIcon
   public renderSuffixIcon() {
-    const { suffixIcon, $slots, handleClickIcon } = this;
-    const suffix = suffixIcon || $slots.suffix ? <span class="z-input-suffix-icon" on-click={handleClickIcon}>
-      <span class="z-input-suffix-icon-inner">
-        <i class={['iconfont', suffixIcon]} if="suffixIcon"></i>
-        {$slots.suffix}
+    const { suffixIcon, $slots, handleClickIcon, showClear, handleClear } = this;
+    if (showClear()) {
+      return <span class="z-input-suffix-icon">
+        <span class="z-input-suffix-icon-inner">
+          <i class='iconfont zxclose' on-mousedown={(e) => e.stopPropagation()} on-click={handleClear}></i>
+          {$slots.suffix}
+        </span>
       </span>
-    </span> : null;
-    return suffix;
+    } else {
+      const suffix = suffixIcon || $slots.suffix ? <span class="z-input-suffix-icon" on-click={handleClickIcon}>
+        <span class="z-input-suffix-icon-inner">
+          <i class={['iconfont', suffixIcon]} if="suffixIcon"></i>
+          {$slots.suffix}
+        </span>
+      </span> : null;
+      return suffix;
+    }
   }
 
   // 显示清空图标
-  // public showClear() {
-  //   return !this.disabled && this.hovering && this.clearable;
-  // }
+  public showClear() {
+    return !this.disabled && this.hovering && this.clearable;
+  }
 
   // 是否显示后置内容
-  // public getVisibleSuffix() {
-  //   const {$slots, suffixIcon, showClear} = this;
-  //   return $slots.suffix || suffixIcon || showClear()
-  // }
+  public getVisibleSuffix() {
+    const {$slots, suffixIcon, showClear} = this;
+    return $slots.suffix || suffixIcon || showClear()
+  }
 
   // render input
   public renderInput() {
-    const { setInputType, setPlaeholder, setDisabled, setLength, handleBlur, handleInput, handleChange, handleFocus, handleMouseEnter, handleMouseLeave } = this;
+    const { setInputType, setPlaeholder, setDisabled, setLength, handleBlur, handleInput, handleChange, handleFocus } = this;
     const limitLength = setLength();
     return <input ref="input"
       type={setInputType()}
@@ -227,15 +249,14 @@ export default class ZInput extends Vue {
       on-blur={handleBlur}
       on-input={handleInput}
       on-change={handleChange}
-      on-focus={handleFocus}
-      on-mouseenter={handleMouseEnter}
-      on-mouseleave={handleMouseLeave} />;
+      on-focus={handleFocus} />;
   }
 
   public render() {
-    const { renderInput, renderLabel, setInputClass, renderSuffixIcon, renderPrefixIcon } = this;
+    const { renderInput, renderLabel, setInputClass, renderSuffixIcon, renderPrefixIcon, handleMouseEnter, handleMouseLeave } = this;
     return (
-      <div class={['z-input', setInputClass()]}>
+      <div class={['z-input', setInputClass()]} on-mouseenter={handleMouseEnter}
+      on-mouseleave={handleMouseLeave} >
         {renderPrefixIcon()}
         {renderLabel()}
         {renderInput()}

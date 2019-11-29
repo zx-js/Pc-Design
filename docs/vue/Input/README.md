@@ -4,7 +4,7 @@
  * @Author: bhabgs
  * @Date: 2019-11-12 09:06:17
  * @LastEditors: langxue
- * @LastEditTime: 2019-11-22 11:36:03
+ * @LastEditTime: 2019-11-22 11:46:07
  -->
 
 # input 组件
@@ -29,6 +29,12 @@
 
 <templates-demo name="Input-demo-label">
 <<< @/docs/.vuepress/components/Input/demo-label.vue
+</templates-demo>
+
+### 可清空
+
+<templates-demo name="Input-demo-clearable">
+<<< @/docs/.vuepress/components/Input/demo-clearable.vue
 </templates-demo>
 
 ### 尺寸

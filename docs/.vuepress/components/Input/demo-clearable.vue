@@ -4,7 +4,7 @@
  * @Author: langxue
  * @Date: 2019-11-12 11:07:52
  * @LastEditors: langxue
- * @LastEditTime: 2019-11-22 11:27:45
+ * @LastEditTime: 2019-11-27 15:05:31
  -->
 <template>
   <div id="input-demo">
@@ -12,8 +12,9 @@
         v-model="value"
         clearable
         ref="input"
-        @focus="handleFocus"
+        @clear="clear"
         placeholder="请输入内容" />
+        {{value}}
   </div>
 </template>
 <script>
@@ -27,8 +28,9 @@ export default {
     this.$refs.input.focus();
   },
   methods: {
-    handleFocus(e) {
-      console.log('focus', e);
+    clear(e) {
+      this.value = null
+      console.log('clear');
     },
   }
 };
