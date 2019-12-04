@@ -4,20 +4,12 @@
  * @Author: langxue
  * @Date: 2019-11-12 11:07:52
  * @LastEditors: langxue
- * @LastEditTime: 2019-11-18 09:34:18
+ * @LastEditTime: 2019-12-04 14:07:19
  -->
 <template>
   <div id="input-demo">
     <z-input type="text"
-        v-model="value"
-        placeholder="请输入内容"
-        @blur="handleBlur"
-        @input="handleInput"
-        @change="handleChange" />
-        <span>{{value}}</span>
-    <br />
-    <z-input type="password"
-          placeholder="请输入密码" />
+        placeholder="请输入内容" />
   </div>
 </template>
 <script>
