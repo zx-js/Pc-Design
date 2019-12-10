@@ -1,11 +1,12 @@
 import { Component, Vue, Prop, Model, Watch } from 'vue-property-decorator';
 import inputProps from './inputProps';
+import { VNode } from 'vue';
 
 const baseInput = Vue.extend({
   props: {...inputProps},
   model: {
     prop: 'value',
-    event: 'change.value',
+    event: 'input.value',
   },
   data() {
     const { value, modelValue } = this.$props;
@@ -42,6 +43,35 @@ export default class ZInput extends baseInput {
     }
   }
 
+  // handleInput
+  public handleInput(e) {
+    const value = e.target.value;
+    this.$emit('input', value);
+    this.$emit('input.value', e.target.value);
+    this.stateValue = value;
+  }
+
+  // handleChange
+  public handleChange(e) {
+    this.$emit('change', e.target.value);
+  }
+
+  // handleClear
+  public handleClear(e) {
+    this.stateValue = '';
+    this.$emit('clear', e);
+  }
+
+  //blur
+  public blur() {
+    (this.$refs.input as HTMLInputElement).blur();
+  }
+
+  // focus
+  public focus() {
+    (this.$refs.input as HTMLInputElement).focus();
+  }
+
   // render prefixIcon or slot prefixIcon
   public renderPrefixIcon(): JSX.Element {
     const { $props, $slots } = this;
@@ -56,11 +86,13 @@ export default class ZInput extends baseInput {
   }
 
   // render clear icon
-  public renderClearIcon() {
-    const { clearable, disabled } = this.$props;
+  public renderClearIcon(): JSX.Element {
+    const { clearable, disabled, suffixIcon, suffix } = this.$props;
     const { stateValue, handleClear } = this;
+    // 存在suffixIcon 或 suffix 不显示清空图标
+    const hasSuffix = suffixIcon || suffix;
     // 不清空，禁用，值为空
-    if (!clearable || disabled || stateValue === '' || stateValue === null || stateValue === undefined) {
+    if (!clearable || disabled || stateValue === '' || stateValue === null || stateValue === undefined || hasSuffix) {
       return null;
     }
     const clearIcon = <i class="iconfont zxclose z-icon z-input-clear-icon" onClick={handleClear}></i>;
@@ -88,28 +120,17 @@ export default class ZInput extends baseInput {
       </span>
   }
 
-  // handleInput
-  public handleInput(e: any) {
-    const value = e.target.value;
-    this.$emit('input', value);
-    this.stateValue = value;
-  }
-
-  // handleClear
-  public handleClear(e: any) {
-    this.stateValue = '';
-    this.$emit('clear', e);
-  }
-
   // render input
   public renderInput(): JSX.Element {
-    const { stateValue, $props, handleInput } = this;
+    const { stateValue, $props, handleInput, handleChange } = this;
     return <input ref="input"
       value= {stateValue}
+      maxlength={$props.maxlength}
       disabled={$props.disabled}
       class={['z-input-inner']}
       placeholder={$props.placeholder}
-      on-input={handleInput} />;
+      on-input={handleInput}
+      on-change={handleChange} />;
   }
 
   public render() {

@@ -4,7 +4,7 @@
  * @Author: bhabgs
  * @Date: 2019-11-12 09:06:17
  * @LastEditors: langxue
- * @LastEditTime: 2019-12-04 14:06:46
+ * @LastEditTime: 2019-12-10 10:34:38
  -->
 
 # input 输入
@@ -90,14 +90,11 @@
 | type           | 文本框类型           | String          | false    | text 和其他原生 input 的 type 值 | text       |
 | placeholder    | 文本框占位文本       | String          | false    | -                                | 请输入内容 |
 | disabled       | 禁用                 | Boolean         | false    | -                                | false      |
-<!-- | label          | 文本框标签文本       | String          | false    | -                                | -          |
-| labelWidth     | 文本框标签文本宽度   | String          | false    | -                                | auto       | -->
+| clearable          | 点击清除图标清空内容       | Boolean          | false    | -                                | -          |
 | size           | 文本框尺寸           | String          | false    | medium，small，mini              | medium     |
-<!-- | min            | 文本框输入最小值     | Number          | false    | -                                | -          |
-| max            | 文本框输入最大值     | Number          | false    | -                                | -          | -->
+| maxlength            | 文本框输入最大长度     | Number          | false    | -                                | -          |
 | suffixIcon     | 后置 icon            | String          | false    | -                                | -          |
 | prefixIcon     | 前置 icon            | String          | false    | -                                | -          |
-<!-- | showWordLimit  | 是否显示输入字数统计 | Boolean         | false    | -                                | false      | -->
 | value(v-model) | 绑定值               | string / number | false    | -                                | -          |
 
 :::
@@ -108,6 +105,15 @@
 | :----- | :------------- | :--- | :------- | :----- | :----- |
 | prefix | 输入框头部内容 | -    | -        | -      | -      |
 | suffix | 输入框头部内容 | -    | -        | -      | -      |
+
+:::
+
+::: explain input Methods
+
+| 参数   | 描述           | 类型 | 是否必填 | 可选值 | 默认值 |
+| :----- | :------------- | :--- | :------- | :----- | :----- |
+| focus | 获取Input焦点 | -    | -        | -      | -      |
+| blur | Input失去焦点 | -    | -        | -      | -      |
 
 :::
 

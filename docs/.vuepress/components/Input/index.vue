@@ -4,12 +4,15 @@
  * @Author: langxue
  * @Date: 2019-11-12 11:07:52
  * @LastEditors: langxue
- * @LastEditTime: 2019-12-04 14:07:19
+ * @LastEditTime: 2019-12-10 10:34:51
  -->
 <template>
   <div id="input-demo">
     <z-input type="text"
-        placeholder="请输入内容" />
+        placeholder="请输入内容"
+        v-model="value"
+        @change="handleChange"
+        @input="handleInput"/>
   </div>
 </template>
 <script>
@@ -20,14 +23,11 @@ export default {
     };
   },
   methods: {
-    handleBlur(e) {
-      console.log('blur', e);
+    handleChange(e) {
+      console.log('change：', e);
     },
     handleInput(e) {
-      console.log('input', e);
-    },
-    handleChange(e) {
-      console.log('change', e);
+      console.log('input：', e);
     }
   }
 };

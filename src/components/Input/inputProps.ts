@@ -4,7 +4,7 @@
  * @Author: langxue
  * @Date: 2019-12-03 11:05:08
  * @LastEditors: langxue
- * @LastEditTime: 2019-12-04 13:58:31
+ * @LastEditTime: 2019-12-10 10:33:53
  */
 export default {
   modelValue: [String, Number],
@@ -24,8 +24,7 @@ export default {
     default: 'default',
     type: String,
   },
-  min: Number,
-  max: Number,
+  maxlength: Number,
   suffixIcon: String,
   prefixIcon: String,
   clearable: {
