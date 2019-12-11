@@ -4,7 +4,7 @@
  * @Author: bhabgs
  * @Date: 2019-11-07 09:48:14
  * @LastEditors: bhabgs
- * @LastEditTime: 2019-11-29 11:00:09
+ * @LastEditTime: 2019-12-11 18:38:42
  */
 const themeConfig = {
   nav: [
@@ -36,7 +36,8 @@ const themeConfig = {
       ["Drag/", "Drag 拖拽"],
       ["Scale/", "Scale 缩放"],
       ["ml/", "马良docs"],
-      ["Alert/", "Alert 警告"]
+      ["Alert/", "Alert 警告"],
+      ["Icon/", "Icon 图标"]
     ]
   },
   sidebarDepth: 2

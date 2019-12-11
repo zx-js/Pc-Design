@@ -3,8 +3,8 @@
  * @version:
  * @Author: bhabgs
  * @Date: 2019-11-12 14:04:54
- * @LastEditors: 王晓龙
- * @LastEditTime: 2019-11-28 14:30:34
+ * @LastEditors: bhabgs
+ * @LastEditTime: 2019-12-11 15:14:55
  */
 // 找到components文件夹下以.vue命名的文件
 
@@ -17,8 +17,9 @@ import Input from "./Input/main";
 import ZTimeline from "./Timeline/main";
 import ZTimelineItem from "./TimelineItem/main";
 import ZTable from "./Table/main";
-import ZAlert from './Alert/main';
-const compontents: any[] = [
+import ZAlert from "./Alert/main";
+import ZIcon from "./Icon";
+const compontents: Vue.Component[] = [
   ZButton,
   Zloading,
   ZTag,
@@ -29,7 +30,8 @@ const compontents: any[] = [
   ZTable,
   Zdrag,
   ZScale,
-  ZAlert
+  ZAlert,
+  ZIcon
 ];
 export { compontents };
 export default compontents;
