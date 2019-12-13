@@ -39,7 +39,7 @@ export default class Message extends Vue {
   }
   private get classes(): string {
     let baseClass = "z-message ";
-    const classname = `${baseClass}z-message-${this.args.type}`;
+    const classname = `${baseClass}z-message-${this.args.type} bounceInDown`;
     return util.clearBlank(classname);
   }
   mounted() {
@@ -48,7 +48,7 @@ export default class Message extends Vue {
   render(): JSX.Element {
     const { classes, args } = this;
     return (
-      <transition onAfterLeave={this.handleAfterLeave} name="z-message">
+      <transition onAfterLeave={this.handleAfterLeave} appear name="z-message">
         <div class="z-message-box" v-show={this.visible}>
           <div class={[classes]}>
             <Icon type={iconType[args.type]} />
