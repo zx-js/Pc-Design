@@ -3,8 +3,8 @@
  * @version:
  * @Author: bhabgs
  * @Date: 2019-11-07 09:48:14
- * @LastEditors: bhabgs
- * @LastEditTime: 2019-12-11 18:38:42
+ * @LastEditors: 王晓龙
+ * @LastEditTime: 2019-12-12 15:30:07
  */
 const themeConfig = {
   nav: [
@@ -37,7 +37,8 @@ const themeConfig = {
       ["Scale/", "Scale 缩放"],
       ["ml/", "马良docs"],
       ["Alert/", "Alert 警告"],
-      ["Icon/", "Icon 图标"]
+      ["Icon/", "Icon 图标"],
+      ['Select/', 'Select 选择器'],
     ]
   },
   sidebarDepth: 2
