@@ -16,7 +16,7 @@ export default class ZTableBody extends Vue {
   }
 
   /* ************************ Render ************************ */
-  render() {
+  render(): JSX.Element {
     const colSlots = this.$slots.default || [];
 
     return (

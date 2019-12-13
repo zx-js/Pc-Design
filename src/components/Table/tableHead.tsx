@@ -18,7 +18,7 @@ export default class ZTableHead extends Vue {
   }
 
   /* ************************ Render ************************ */
-  render() {
+  render(): JSX.Element {
     const colSlots = this.$slots.default || [];
 
     return (

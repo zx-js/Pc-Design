@@ -77,7 +77,7 @@ export default class ZAlert extends BaseProps {
   }
 
   /* ************************ Render ************************* */
-  render() {
+  render(): JSX.Element {
     return (
       <div class={this.getClassName}>
         <div class="z-alert-inner">

@@ -49,7 +49,7 @@ export default class ZTimelineItem extends BaseProps {
   private timeline!: Vue;
 
   /* ************************ Render ************************ */
-  render() {
+  render(): JSX.Element {
     const dotSlots = this.$slots.dot || <span class="zx-timeline-dot" style={`border-color:${this.dotColor}`}></span>;
     const summartContent: VNode[] | string | undefined = this.$slots.content || this.content;
     const timelineSummary: VNode[] | string | undefined | JSX.Element = summartContent ? <div class="zx-timeline-summary">{summartContent}</div> : '';
