@@ -4,7 +4,7 @@
  * @Author: bhabgs
  * @Date: 2019-11-07 09:48:14
  * @LastEditors: bhabgs
- * @LastEditTime: 2019-12-11 18:38:42
+ * @LastEditTime: 2019-12-13 13:30:38
  */
 const themeConfig = {
   nav: [
@@ -27,17 +27,18 @@ const themeConfig = {
       ["quicklearning/", "快速上手"],
       ["theme/", "主题定制化"],
       ["Button/", "Button 按钮"],
-      ["Tag/", "Tag 标签"],
+      ["Icon/", "Icon 图标"],
       ["Input/", "Input 输入"],
       ["Loading/", "Loading 加载"],
-      ["timeline/", "Timeline 时间轴"],
+
       ["Table/", "Table 表格"],
       ["Message/", "Message 提示"],
-      ["Drag/", "Drag 拖拽"],
-      ["Scale/", "Scale 缩放"],
-      ["ml/", "马良docs"],
       ["Alert/", "Alert 警告"],
-      ["Icon/", "Icon 图标"]
+      ["Tag/", "Tag 标签"],
+      ["timeline/", "Timeline 时间轴"]
+      // ["Drag/", "Drag 拖拽"],
+      // ["Scale/", "Scale 缩放"],
+      // ["ml/", "马良docs"],
     ]
   },
   sidebarDepth: 2
