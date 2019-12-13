@@ -1,4 +1,5 @@
 import { Component, Vue, Inject } from 'vue-property-decorator';
+import { VNode } from 'vue';
 
 @Component
 export default class ZTableBody extends Vue {
@@ -17,7 +18,7 @@ export default class ZTableBody extends Vue {
 
   /* ************************ Render ************************ */
   render(): JSX.Element {
-    const colSlots = this.$slots.default || [];
+    const colSlots: VNode = this.$Zutil.singleSlot(this.$slots.col) || [];
 
     return (
       <div class="z-table-body">

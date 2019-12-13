@@ -4,7 +4,7 @@
  * @Author: bhabgs
  * @Date: 2019-11-12 09:06:17
  * @LastEditors: 王晓龙
- * @LastEditTime: 2019-12-13 12:09:47
+ * @LastEditTime: 2019-12-13 15:45:21
  -->
 
 # table 表格
@@ -64,8 +64,8 @@
 
 | 参数   | 描述                           | 类型                             | 是否必填 | 可选值               | 默认值 |
 | :----- | :----------------------------- | :------------------------------- | :------- | :------------------- | :----- |
-| data   | 表格数据源                     | object[]                         | false    | -                    | -      |
-| column | 表格每列的配置                 | array\<[column](#table:column)\> | false    | -                    | -      |
+| data   | 表格数据源                     | Array\<Object\>                  | false    | -                    | -      |
+| column | 表格每列的配置                 | Array\<[Column](#table:column)\> | false    | -                    | -      |
 | type   | 表格的类型 条纹和边框 默认为空 | string                           | false    | 'stripe' \| 'border' | -      |
 
 :::

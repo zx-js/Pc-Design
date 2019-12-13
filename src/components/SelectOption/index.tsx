@@ -1,4 +1,4 @@
-import { Component, Vue, Provide, Emit } from 'vue-property-decorator';
+import { Component, Vue, Provide, Emit, Prop } from 'vue-property-decorator';
 
 /*************************** Props ****************************/
 const BaseProps = Vue.extend({
@@ -21,6 +21,7 @@ const BaseProps = Vue.extend({
 
 @Component
 export default class ZSelectOption extends BaseProps {
+  @Prop({ default: 'bb' }) public b: string;
   /* ************************ Provide ************************ */
   @Provide()
   private selectOption: Vue = this;
@@ -35,7 +36,7 @@ export default class ZSelectOption extends BaseProps {
   private aa: string = 'aa';
 
   /* ************************ Render ************************* */
-  render() {
+  render(): JSX.Element {
     return (
       <div class="z-select-option">
         <span>select option</span>

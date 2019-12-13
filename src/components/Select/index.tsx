@@ -5,13 +5,13 @@ import { VNode } from 'vue';
 const BaseProps = Vue.extend({
   props: {
     // 标题
-    title: {
-      required: false,
-      type: String,
-      default() {
-        return '';
-      }
-    }
+    // title: {
+    //   required: false,
+    //   type: String,
+    //   default() {
+    //     return '';
+    //   }
+    // }
   }
 });
 
@@ -29,9 +29,9 @@ export default class ZSelect extends BaseProps {
   }
 
   /* ************************ Render ************************* */
-  render() {
-    let slots: VNode[] = this.$slots.default || [];
-    console.log(this.$props);
+  render(): JSX.Element {
+    let slots: VNode[] = this.$Zutil.filterEmpty(this.$slots.default) || [];
+    // console.log(slots[0]);
 
     return (
       <div class="z-select">

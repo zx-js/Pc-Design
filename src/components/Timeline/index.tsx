@@ -22,7 +22,7 @@ export default class ZTimeline extends BaseProps {
 
   /* ************************ Render ************************* */
   render(): JSX.Element {
-    let slots: VNode[] = this.$slots.default || [];
+    let slots: VNode[] = this.$Zutil.filterEmpty(this.$slots.default) || [];
 
     if (this.reverse) {
       slots = slots.reverse();

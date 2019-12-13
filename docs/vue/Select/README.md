@@ -4,7 +4,7 @@
  * @Author: 王晓龙
  * @Date: 2019-12-12 15:33:45
  * @LastEditors: 王晓龙
- * @LastEditTime: 2019-12-13 09:36:07
+ * @LastEditTime: 2019-12-13 15:02:44
  -->
 
 # select 选择器
@@ -17,9 +17,9 @@
 
 ::: explain 基础用法
 
-<templatePc name="select-demo1">
+<templatePc name="select-basic">
 
-<<< @/docs/.vuepress/components/select/demo1.vue
+<<< @/docs/.vuepress/components/select/basic.vue
 
 </templatePc>
 
