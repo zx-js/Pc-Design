@@ -4,9 +4,9 @@
  * @Author: bhabgs
  * @Date: 2019-11-05 16:22:07
  * @LastEditors: 王晓龙
- * @LastEditTime: 2019-12-16 15:38:03
+ * @LastEditTime: 2019-12-19 14:20:31
  */
-import Vue, { VNode, VueConstructor } from 'vue';
+import Vue, { VNode, VueConstructor, Component } from 'vue';
 
 declare global {
   namespace JSX {
@@ -17,13 +17,13 @@ declare global {
     interface IntrinsicElements {
       [elem: string]: any;
     }
+    interface constructor extends VueConstructor {}
   }
   interface zCompontent {
     install: VueConstructor;
     name: string;
     version: string;
   }
-  interface VueConstructor {}
 }
 
 declare module 'vue/types/options' {

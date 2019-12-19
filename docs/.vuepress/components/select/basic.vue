@@ -1,13 +1,15 @@
 <template>
   <div class="demo1">
-    <z-select>
+    <z-select v-model="value">
       <z-select-option
         v-for="(item, index) in options"
         :key="index"
         :value="item.value"
         :label="item.label"
+        :disabled="item.disabled"
       />
     </z-select>
+    <p>value: {{value}}</p>
   </div>
 </template>
 
@@ -30,13 +32,15 @@ export default {
         },
         {
           label: '游泳',
-          value: 'swimming'
+          value: 'swimming',
+          disabled: true
         },
         {
           label: '健身',
           value: 'fitness'
         }
-      ]
+      ],
+      value: 'boxing'
     };
   }
 };

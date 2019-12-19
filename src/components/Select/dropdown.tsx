@@ -1,33 +1,29 @@
-import { Component, Vue, Inject } from 'vue-property-decorator';
-import { VNode } from 'vue';
+import { Component, Vue } from 'vue-property-decorator';
 
-/*************************** Props ****************************/
+/**************************** Props ****************************/
 const BaseProps = Vue.extend({
-  props: {
-    // 标题
-    // title: {
-    //   required: false,
-    //   type: String,
-    //   default() {
-    //     return '';
-    //   }
-    // }
-  }
+  props: {}
 });
 
 @Component
 export default class ZDropdown extends BaseProps {
   /* ************************ Inject ************************* */
-  @Inject()
-  private select!: any;
 
   /* ************************ Main *************************** */
+  // 顶级组件实例
+  private select: any;
 
   /* ************************ Render ************************* */
   render(): JSX.Element {
+    const slots = this.select.watchData.slots;
+
     return (
-      <div class="z-select-dropdown">
-        <ul>{this.select.slots}</ul>
+      <div class="z-select-dropdown" style={this.select.dropdownData.style}>
+        <div class="z-select-dropdown__wrap">
+          <div class="z-select-dropdown__scroll">
+            <ul>{slots}</ul>
+          </div>
+        </div>
       </div>
     );
   }

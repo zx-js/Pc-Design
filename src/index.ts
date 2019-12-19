@@ -4,7 +4,7 @@
  * @Author: bhabgs
  * @Date: 2019-10-29 10:54:09
  * @LastEditors: 王晓龙
- * @LastEditTime: 2019-12-16 15:36:28
+ * @LastEditTime: 2019-12-19 14:17:18
  */
 import Vue from 'vue';
 import { compontents } from './components';
@@ -20,6 +20,7 @@ Vue.prototype.$ZBus = new Vue();
 const install = function(Vue: any) {
   // 指令
   Vue.use(directives);
+  Vue.prototype.$ZBus = new Vue();
   // 工具
   Vue.prototype.$Zutil = Zutil.utils;
   Vue.prototype.$ZMessage = Zutil.message;

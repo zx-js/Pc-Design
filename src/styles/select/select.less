@@ -1,5 +1,143 @@
 .z-select {
+  width: 220px;
   text-align: left;
   box-sizing: border-box;
   font-size: @small-font-size;
+
+  // select-input输入框
+  .z-select-input {
+    box-sizing: border-box;
+    font-size: @font-size-md;
+
+    .z-select-input__inner {
+      width: 100%;
+      height: 35px;
+      display: flex;
+      align-items: center;
+      padding: 0 @padding-md;
+      border: 1px solid @gray-3;
+      border-radius: 5px;
+      box-sizing: border-box;
+      cursor: pointer;
+      position: relative;
+      transition: .3s;
+
+      .z-select-input__render {
+        flex: 1;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        margin-right: @padding-md;
+        position: relative;
+
+        // 数据值
+        .z-select-input__value {
+          position: relative;
+          z-index: 1;
+          width: 100%;
+          color: @gray-6;
+          pointer-events: none;
+          user-select: none;
+        }
+
+        // 输入元素
+
+        // placeholder
+        .z-select-input__placeholder {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          display: flex;
+          align-items: center;
+          color: @gray-4;
+          pointer-events: none;
+          user-select: none;
+        }
+      }
+
+      // 图标
+      .z-select-input__icon {
+        pointer-events: none;
+        transition: .3s;
+
+        .iconfont {
+          display: block;
+          font-size: @font-size-md;
+          color: @gray-4;
+        }
+      }
+
+      // 鼠标滑过
+      &:hover {
+        border-color: @blue-5;
+      }
+    }
+  }
+
+  // 焦点状态
+  &.z-select-isfocus {
+    .z-select-input {
+      .z-select-input__inner {
+        border-color: @blue-5;
+        box-shadow: 0 0 0 2px @blue-7;
+
+        .z-select-input__icon {
+          transform: rotate(180deg);
+        }
+      }
+    }
+  }
+}
+
+// select-dropdown下拉
+.z-select-dropdown {
+  .z-select-dropdown__wrap {
+    background: @white;
+    border: 1px solid @gray-2;
+    border-radius: 5px;
+    box-shadow: 0px 1px 5px @gray-3;
+    overflow: hidden;
+
+    .z-select-dropdown__scroll {
+      overflow-y: auto;
+
+      ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+
+        .z-select-dropdown__item {
+          height: 35px;
+          display: flex;
+          align-items: center;
+          padding: 0 @padding-md;
+          font-size: @font-size-md;
+          color: @gray-6;
+          cursor: pointer;
+          transition: .3s;
+
+          // 鼠标滑过
+          &:hover {
+            background: @blue-8;
+            color: @blue-3;
+          }
+
+          // 选中状态
+          &.selected {
+            background: @gray-2;
+            color: @gray-6;
+            font-weight: bold;
+          }
+
+          // 禁用状态
+          &.disabled {
+            background: @white;
+            color: @gray-4;
+            cursor: not-allowed;
+            user-select: none;
+          }
+        }
+      }
+    }
+  }
 }
