@@ -1,12 +1,12 @@
 import { VNode } from 'vue';
-
+import MsgCode from './MsgCode';
 /*
  * @abstract:""
  * @version:""
  * @Author: bhabgs
  * @Date: 2019-11-08 10:07:49
- * @LastEditors: 王晓龙
- * @LastEditTime: 2019-12-19 14:21:06
+ * @LastEditors  : langxue
+ * @LastEditTime : 2019-12-27 15:55:27
  */
 export function isEmptyElement(c) {
   return !(c.tag || (c.text && c.text.trim() !== ''));
@@ -105,5 +105,6 @@ export default {
     };
   },
   isEmptyElement,
-  filterEmpty
+  filterEmpty,
+  MsgCode
 };

@@ -9,6 +9,15 @@
 
 import Input from './index';
 
+
+import utils from '../../packages/utils';
+const Msg = new utils.MsgCode();
+const msg = Msg.getMsg('WIN001');
+console.log(msg);
+const msg2 = Msg.getMsg([
+    '111', '222'
+]);
+
 const ZInput = {
     version: '0.0.1',
     name: 'ZInput',
