@@ -19,7 +19,7 @@ export default {
   getId(id: string) {
     return document.getElementById(id);
   },
-  // 深拷贝
+  
   dataType(obj: any) {
     const toString = Object.prototype.toString;
     const typeMap: any = {
@@ -36,6 +36,7 @@ export default {
     };
     return typeMap[toString.call(obj)];
   },
+  // 深拷贝
   deepClone(data: any) {
     const type = this.dataType(data);
     let o: any;
