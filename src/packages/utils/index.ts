@@ -1,12 +1,12 @@
 import { VNode } from 'vue';
-
+import MsgCode from './MsgCode';
 /*
  * @abstract:""
  * @version:""
  * @Author: bhabgs
  * @Date: 2019-11-08 10:07:49
- * @LastEditors: 王晓龙
- * @LastEditTime: 2019-12-19 14:21:06
+ * @LastEditors  : langxue
+ * @LastEditTime : 2019-12-27 15:55:27
  */
 export function isEmptyElement(c) {
   return !(c.tag || (c.text && c.text.trim() !== ''));
@@ -19,7 +19,7 @@ export default {
   getId(id: string) {
     return document.getElementById(id);
   },
-  // 深拷贝
+  
   dataType(obj: any) {
     const toString = Object.prototype.toString;
     const typeMap: any = {
@@ -36,6 +36,7 @@ export default {
     };
     return typeMap[toString.call(obj)];
   },
+  // 深拷贝
   deepClone(data: any) {
     const type = this.dataType(data);
     let o: any;
@@ -105,5 +106,6 @@ export default {
     };
   },
   isEmptyElement,
-  filterEmpty
+  filterEmpty,
+  MsgCode
 };
